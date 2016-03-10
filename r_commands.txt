@@ -1,0 +1,24 @@
+mydata = read.csv("hw1_data.csv")
+mydata<-mydata[-154,]
+any(is.na(mydata[]))
+sum(is.na(mydata))
+sum(is.na(mydata$Ozone))
+sum(is.na(mydata$Solar.R))
+subset(mydata.clean2,Ozone >120 )
+with(mydata.clean2, subset(Ozone, Temp > 80))
+subset(mydata.clean2,Ozone > 90 & Temp > 91)
+
+
+
+> library(gdata)                   # load gdata package 
+> help(read.xls)                   # documentation 
+> mydata = read.xls("mydata.xls")  # read from fir
+
+x <- subset( mydata, select = -a )
+
+x <- subset( mydata, select = -c(Solar.R,Wind,Temp,Month,Day) ) 
+
+library(RCurl)
+install.packages("RCurl")\
+url<- getURL("https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_finals")
+poptable <- readHTMLTable(url,which=1)
